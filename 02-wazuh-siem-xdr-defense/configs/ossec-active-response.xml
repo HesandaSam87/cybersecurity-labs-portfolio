@@ -1,0 +1,7 @@
+﻿<!-- Wazuh Active Response Configuration for Brute Force Mitigation (Rule 60204) -->
+<active-response>
+  <command>netsh</command>
+  <location>local</location>
+  <rules_id>60204</rules_id>
+  <timeout>180</timeout>
+</active-response>
