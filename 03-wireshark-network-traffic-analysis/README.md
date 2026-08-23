@@ -19,8 +19,8 @@ To establish a baseline of normal network communication, 4 ICMP packets were tra
 The capture successfully recorded 8 packets in total. The traffic consisted of four **ICMP Echo Requests (Type 8)** originating from the Kali machine, followed immediately by four corresponding **ICMP Echo Replies (Type 0)** from the Ubuntu machine. This validates that two-way communication is fully operational at the network layer and demonstrates how raw connectivity is established prior to higher-level service interaction.
 
 **Evidence:**
-*   ![Kali Ping Execution](Lab_Assets/Screenshot%201.jpg)
-*   ![Wireshark ICMP Capture](Lab_Assets/Screenshot%202.jpg)
+*   ![Kali Ping Execution](Lab_Assets/Screenshot%201.png)
+*   ![Wireshark ICMP Capture](Lab_Assets/Screenshot%202.png)
 *   [Download Phase 1 PCAP File](Lab_Assets/baseline_icmp.pcapng)
 
 ---
@@ -34,7 +34,7 @@ To demonstrate the inherent vulnerabilities of legacy protocols, an FTP server (
 The packet capture confirms that FTP transmits authentication data in plain text without cryptographic protection. By inspecting the payload of the captured packets, the exact credentials (`USER ubuntu` and `PASS password1234`) were easily intercepted and read by the monitoring interface. This practically demonstrates why legacy protocols like FTP and Telnet are deprecated in favor of encrypted alternatives like SFTP and SSH.
 
 **Evidence:**
-*   ![Kali FTP Authentication](Lab_Assets/Screenshot%203.jpg)
+*   ![Kali FTP Authentication](Lab_Assets/Screenshot%203.png)
 *   ![Wireshark Cleartext Interception](Lab_Assets/Screenshot%204.png)
 *   [Download Phase 2 PCAP File](Lab_Assets/ftp.pcapng)
 
@@ -49,6 +49,6 @@ To observe the initial phase of a cyber attack, a Stealth SYN Scan was executed 
 The Nmap scan successfully identified all three target ports (21, 22, and 80) as actively listening. By analyzing the captured packets for Port 21, the mechanics of the "Stealth SYN" technique are clearly visible. Instead of completing a standard TCP 3-way handshake, the attacker machine sends a `SYN` packet, receives a `SYN-ACK` from the target (confirming the port is open), and immediately terminates the interaction with an `RST` (Reset) packet. This prevents a full connection from being established, allowing the scan to often bypass basic application-level logging on the target server.
 
 **Evidence:**
-*   ![Nmap Reconnaissance Scan](Lab_Assets/Screenshot%205.jpg)
+*   ![Nmap Reconnaissance Scan](Lab_Assets/Screenshot%205.png)
 *   ![Wireshark TCP SYN-ACK-RST](Lab_Assets/Screenshot%206.png)
 *   [Download Phase 3 PCAP File](Lab_Assets/tcp.pcapng)
