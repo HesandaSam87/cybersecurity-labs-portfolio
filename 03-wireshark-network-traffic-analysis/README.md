@@ -36,7 +36,7 @@ The packet capture confirms that FTP transmits authentication data in plain text
 **Evidence:**
 *   ![Kali FTP Authentication](Lab_Assets/Screenshot%203.jpg)
 *   ![Wireshark Cleartext Interception](Lab_Assets/Screenshot%204.png)
-*   [Download Phase 2 PCAP File](Lab_Assets/ftp_cleartext.pcapng)
+*   [Download Phase 2 PCAP File](Lab_Assets/ftp.pcapng)
 
 ---
 
@@ -51,4 +51,4 @@ The Nmap scan successfully identified all three target ports (21, 22, and 80) as
 **Evidence:**
 *   ![Nmap Reconnaissance Scan](Lab_Assets/Screenshot%205.jpg)
 *   ![Wireshark TCP SYN-ACK-RST](Lab_Assets/Screenshot%206.png)
-*   [Download Phase 3 PCAP File](Lab_Assets/nmap_syn_scan.pcapng)
+*   [Download Phase 3 PCAP File](Lab_Assets/tcp.pcapng)
